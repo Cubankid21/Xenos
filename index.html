@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricol Auto Accessories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Remove the product-heading styles from the style section -->
+    <style>
+        .product-showcase {
+            position: relative;
+            width: 700px;  /* Increased from 500px */
+            height: 700px; /* Increased from 500px */
+            overflow: hidden;
+        }
+        .product-item {
+            position: absolute;
+            width: 400px;    /* Increased from 300px */
+            height: 400px;   /* Increased from 300px */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .product-item.active {
+            opacity: 1;
+        }
+        .product-item img {
+            max-width: 90%;    /* Increased from 80% */
+            max-height: 90%;   /* Increased from 80% */
+            object-fit: contain;
+            position: relative;
+            z-index: 2;
+            mix-blend-mode: multiply; /* This helps with white backgrounds */
+        }
+        .product-item::before {
+            content: '';
+            position: absolute;
+            width: 600px;    /* Increased from 400px */
+            height: 600px;   /* Increased from 400px */
+            background: radial-gradient(
+                circle,
+                rgba(0, 119, 204, 0.2) 0%,
+                rgba(64, 156, 255, 0.15) 25%,
+                rgba(128, 189, 255, 0.1) 50%,
+                rgba(255, 255, 255, 0) 70%
+            );
+            border-radius: 50%;
+            z-index: 1;
+            filter: blur(20px);
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+        .product-item::after {
+            content: '';
+            position: absolute;
+            width: 520px;    /* Increased from 320px */
+            height: 520px;   /* Increased from 320px */
+            border: 2px solid rgba(0,119,204,0.1);
+            border-radius: 50%;
+            z-index: 1;
+            backdrop-filter: blur(5px);
+        }
+
+        @keyframes pulseGlow {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        /* Remove the product-heading style block that follows */
+    </style>
+</head>
+<body class="bg-white">
+    <div class="min-h-screen flex items-center">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+            <!-- Left side content -->
+            <div class="md:w-1/2 mb-16 md:mb-0">
+<div class="space-y-4">
+    <h2 class="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#0077cc] to-[#00a3ff] animate-gradient tracking-tight leading-none transform hover:scale-105 transition-transform duration-300">
+        Exciting Range
+    </h2>
+    <h3 class="text-3xl md:text-5xl font-bold text-white leading-tight relative group">
+        of Auto Accessories
+        <span class="absolute -bottom-2 left-0 w-24 h-1 bg-[#0077cc] rounded-full transform origin-left transition-all duration-300 group-hover:w-full"></span>
+    </h3>
+</div>
+                <div class="mt-8">
+                    <button class="relative overflow-hidden bg-[#0077cc] text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg group">
+                        <span class="relative z-10">View More</span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-[#0066b3] to-[#00a3ff] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right side product showcase -->
+            <div class="md:w-1/2">
+                <!-- Modify the product showcase section -->
+                <div class="product-showcase">
+                    <div class="product-item active">
+                        <h3 class="product-title text-white font-bold">LED Lights</h3>
+                        <img src="images/Lightrbg.png" alt="Auto Horn">
+                    </div>
+                    <div class="product-item">
+                        <h3 class="product-title text-white font-bold">High Sound Horn</h3>
+                        <img src="images/HSrbg.png" alt="Product 2">
+                    </div>
+                    <div class="product-item">
+                        <h3 class="product-title text-white font-bold">Horn Speaker</h3>
+                        <img src="images/hsrgb.png" alt="Product 3">
+                    </div>
+                    <div class="product-item">
+                        <h3 class="product-title text-white font-bold">Bluetooth Speaker</h3>
+                        <img src="images/bt rgb .png" alt="Product 4">
+                    </div>
+                    <div class="product-item">
+                        <h3 class="product-title text-white font-bold">Indicators</h3>
+                        <img src="images/IVrbg.png" alt="Product 5">
+                    </div>
+                    <div class="product-item">
+                        <h3 class="product-title text-white font-bold">DC Converter</h3>
+                        <img src="images/DC.png" alt="Product 6">
+                    </div>
+                    <div class="product-item">
+                        <h3 class="product-title text-white font-bold">Wipers</h3>
+                        <img src="images/whipper bg.png" alt="Product 7" style="max-width: 98%; max-height: 98%;">
+                    </div>
+                    <div class="product-item">
+                        <h3 class="product-title text-white font-bold">Charger</h3>
+                        <img src="images/crgb.png" alt="Product 8">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<style>
+    .product-title {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 1.5rem;
+        font-weight: Medium;
+        text-align: center;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .product-item.active .product-title {
+        opacity: 1;
+    }
+</style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('.product-item');
+            let currentIndex = 0;
+            let isScrolling = false;
+            let scrollTimeout;
+
+            function showImage(index) {
+                items.forEach(item => item.classList.remove('active'));
+                items[index].classList.add('active');
+            }
+
+            window.addEventListener('wheel', (event) => {
+                if (isScrolling) return;
+                isScrolling = true;
+
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    isScrolling = false;
+                }, 500);
+
+                if (event.deltaY > 0) {
+                    // Scroll down
+                    currentIndex = (currentIndex + 1) % items.length;
+                } else {
+                    // Scroll up
+                    currentIndex = (currentIndex - 1 + items.length) % items.length;
+                }
+
+                showImage(currentIndex);
+            });
+
+            // Show first image initially
+            showImage(0);
+        });
+    </script>
+</body>
+</html>
+
+<style>
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(99, 99, 99, 0.05);
+    }
+
+    .header-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .logo-section {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .center-logo {
+        text-align: center;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        justify-content: flex-end;
+    }
+
+    .nav-link {
+        color: #333;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: color 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .nav-link:hover {
+        color: #55b8ff;
+    }
+</style>
+
+<style>
+    /* Add these styles */
+    .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+    }
+
+    .video-background video {
+        position: absolute;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+    }
+
+    .blur-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(8px);
+        background: rgba(255, 255, 255, 0.3);
+    }
+</style>
+
+<!-- Add this right after opening body tag, before the header -->
+<div class="video-background">
+    <video autoplay muted loop playsinline>
+        <source src="images/bg 2video.mov" type="video/mp4">
+    </video>
+    <div class="blur-overlay" style="background: rgba(255, 255, 255, 0.3); backdrop-filter: blur(8px);"></div>
+</div>
+<!-- Add this right after the opening body tag -->
+<header class="header">
+    <div class="header-container">
+        <div class="logo-section">
+            <img src="images/pricol.png" alt="Pricol" class="h-8" style="mix-blend-mode: multiply;">
+        </div>
+        <div class="center-logo">
+            <img src="images/xenos.png" alt="Pricol Title" class="h-14">  <!-- Increased from h-12 to h-14 -->
+        </div>
+        <nav class="nav-links">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">About Us</a>
+            <a href="#" class="nav-link">Products</a>
+            <a href="#" class="nav-link">News</a>
+            <a href="#" class="nav-link">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<style>
+    .header {
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-link {
+        color: white;
+        font-weight: 500;
+        opacity: 0.9;
+    }
+
+    .nav-link:hover {
+        color: #9dd3f1;
+        opacity: 1;
+    }
+
+    /* Update video background overlay */
+    .blur-overlay {
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(8px);
+    }
+
+    /* Update video brightness */
+    .video-background video {
+        filter: brightness(0.8) contrast(1.1);
+    }
+</style>
